@@ -1,0 +1,20 @@
+/* 
+    Document   : newCascadeStyleSheet
+    Created on : Jan 30, 2013, 12:06:50 PM
+    Author     : John Thomas
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+div.bar{
+    display: inline-block;
+    width: 20px;
+    height: 75px;
+    background-color: green;
+    margin-right: 2px;
+}
