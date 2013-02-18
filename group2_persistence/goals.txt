@@ -1,0 +1,58 @@
+﻿Host: Sociotechnical.ischool.drexel.edu
+User: info154
+PW: info154
+Schema: twitterinblack46
+
+
+
+
+Data Persistence
+Your main goal is to implement the database schema and provide getter and setter methods in PhP to support the job table; and getter methods to support the tweet, hashtag, mention, and URL tables.  
+
+
+Input - A database schema.  It is advisable to start with the schema provided in the Github repository and refine as needed.  For example the “_archive” and “_stage” are not required.
+
+
+Connection Point - Tables to support researcher collaboration do not yet exist in the schema, so you should work with “Researcher Collaboration” to define and implement these tables in this round.
+
+
+Output - A populated database schema.
+
+
+create getter and setter methods for the various tables
+aka write the PHP that will “SELECT FROM” and “INSERT INTO” etc for the various tables
+right now you do not need to create text fields or any sort of front end interface, just provide some sort of way to test that what we’ve created works
+
+
+TODO:
+
+
+create new .sql file that contains only the tables we need
+        - the 5 listed above, none of the ones with _ in them
+collaborate with research team to figure out what tables they are creating, add them to schema
+check php.net on how to incorporate the sociotechnical.ischool.drexel.edu database into our code
+        - should just be an extra parameter in db_connect (‘     ‘,’    ‘,’    ‘)   ???
+
+
+________________
+
+
+Sprint 2 Goals
+
+
+1) Make proper GET and SET functions for usage by the Collection team
+Example: 
+
+
+function getHashTags($specificHashTag) {
+        // Query db for $hashtags
+        // return array of data
+}
+
+
+function setHashTag($hashtags) {
+        // Query db to INSERT hash tag
+}
+
+
+2) Connect to the database with PHP and MySQL, eliminating dependence on MySQL Workbench.
