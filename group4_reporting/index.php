@@ -7,9 +7,13 @@ echo "<h1>Total Number of Tweets for All Specific Jobs</h1>";
 //Establishes connection to database
 $link= mysql_connect('sociotechnical.ischool.drexel.edu', 'info154', 'info154');
 
+//Added to allow all browsers time to load query results
+ini_set('max_execution_time', 300);
+
 //Queries database for all jobs and total tweets
 $query= "SELECT COUNT(tweet_id_str), job_id FROM `twitterinblack46`.`tweet` 
-    GROUP BY job_id;";
+    GROUP BY job_id LIMIT 0, 10;";
+//Put parameters on query to decrease load time
 
 
 $result= mysql_query($query);
