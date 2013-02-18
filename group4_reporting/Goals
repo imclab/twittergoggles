@@ -1,0 +1,23 @@
+Peter Stivala
+Christopher Lawrence
+Evan Wilson
+
+Reviewing Visualization/Reporting Collaboration
+
+Visualization looks very clean and effective.
+
+Visualization needs us to generate data.tsv file using queries to then be displayed.
+
+Graphs need values to display intervals.
+
+Our queries must be limited to allow transfer time to be reasonable.
+
+We need to include user input (form) to generate queries. Include what hashtags to use.
+
+Needs to display Job ID, count, and Name.
+
+Proposed Changes:
+
+-Filter by Job ID
+-Output Job CSV 
+-Input takes string of job ID's, so you can specify. Perhaps comma separated string. 
