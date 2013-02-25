@@ -9,23 +9,37 @@
 date_default_timezone_set('UTC');
 $date = date("Y-m-d H:i:s");
 echo "Start Date: " .  $date . "</br>"; //Add all echo statements to end?
+
+if (in_array("-v", $argv)) {
+    echo("verbose mode\n");
+    $log_level = 2;
+} else {
+    echo("</br>terse mode</br>\n");
+    $log_level = 1;
+}
+
 // delay exists so that all the heads are hitting the job table
-$delay = '1';
-$head = '1';
+$options = getopt("h:d::");  // removed i:
+//var_dump($options);
+$head = $options['h'];
+//$interface = $options['i'];
+// delay exists so that all the heads are hitting the job table
+// at different times during the course of a minute
+// delay is in seconds
+$delay = $options['d'];
 echo "Head: " . $head . "</br>";
 echo "Delay: " . $delay . "</br>";
 
 
 //Change these variables to connect to your database
-$dbhost = "localhost"; //Database host
-$dbuser = "root"; //Database username
-$dbpass = "password"; //Database password
-$dbname = "info154"; //Database schema name
+$dbhost = "sociotechnical.ischool.drexel.edu"; //Database host
+$dbuser = "info154"; //Database username
+$dbpass = "info154"; //Database password
+$dbname = "_xgroup"; //Database schema name
 
-$log_level = 1;
 
 //this is concatenated to the end of the URL
-// rpp100 means 100 results per page
+// rpp100 means 100 return per page
 // Include_entities means urls, hashtags and mentions are added
 $fixed_search_params = '&rpp=100&include_entities=1';
 
