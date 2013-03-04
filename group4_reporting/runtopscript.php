@@ -2,7 +2,7 @@
 
 //Total Number of Tweets for All Specific Jobs
 
-echo "<h1>Total Number of Tweets for All Specific Jobs</h1>";
+echo "<p><h1>Total Number of Tweets for All Specific Jobs</h1></p>";
 
 //Establishes connection to database
 $link= mysql_connect('sociotechnical.ischool.drexel.edu', 'info154', 'info154');
@@ -30,12 +30,12 @@ $CSVarray = array();
 
 
 //Sets up table
-echo "<table border='1'
+echo "<p><table border='1'
 <tr>
 <th>Job ID</th>
 <th>Last Count</th>
 <th>Result</th>
-</tr>";
+</tr></p>";
 if($top=='top1'){
     while($row = mysql_fetch_array($top1result))
 {
@@ -44,6 +44,7 @@ if($top=='top1'){
     mysql_data_seek($top1result,0);
 //Populates table
 while($row = mysql_fetch_array($top1result)){
+	echo"<p>";
     echo"<tr>";
     echo "<td>" . $row["job_id"] . "</td>";
     echo "<td>" . ltrim($row["last_count"],'0') . "</td>";
@@ -51,6 +52,7 @@ while($row = mysql_fetch_array($top1result)){
     echo "<tr>";
 }
 echo "</table>";
+echo"</p>";
 }
 elseif($top=='top5'){
     
@@ -61,6 +63,7 @@ while($row = mysql_fetch_array($top5result))
     mysql_data_seek($top5result,0);
     //Populates table
 while($row = mysql_fetch_array($top5result)){
+	echo "<p>";
     echo"<tr>";
     echo "<td>" . $row["job_id"] . "</td>";
     echo "<td>" . ltrim($row["last_count"],'0') . "</td>";
@@ -68,6 +71,7 @@ while($row = mysql_fetch_array($top5result)){
     echo "<tr>";
 }
 echo "</table>";
+echo "</p>";
 }
 
 elseif($top=='top10'){
@@ -78,6 +82,7 @@ elseif($top=='top10'){
     mysql_data_seek($top10result,0);
     //Populates table
 while($row = mysql_fetch_array($top10result)){
+	echo "<p>";
     echo"<tr>";
     echo "<td>" . $row["job_id"] . "</td>";
     echo "<td>" . ltrim($row["last_count"],'0') . "</td>";
@@ -85,6 +90,7 @@ while($row = mysql_fetch_array($top10result)){
     echo "<tr>";
 }
 echo "</table>";
+echo "</p>";
 }
 
 elseif($top=='all'){
@@ -95,6 +101,7 @@ elseif($top=='all'){
     mysql_data_seek($allresult,0);
     //Populates table
 while($row = mysql_fetch_array($allresult)){
+	echo "<p>";
     echo"<tr>";
     echo "<td>" . $row["job_id"] . "</td>";
     echo "<td>" . ltrim($row["last_count"],'0') . "</td>";
@@ -102,6 +109,7 @@ while($row = mysql_fetch_array($allresult)){
     echo "<tr>";
 }
 echo "</table>";
+echo "</p>";
 }
 
 
@@ -113,7 +121,7 @@ function outputCSV($data) {
         fputcsv($filehandler, $vals); // add parameters if you want
     }
     array_walk($data, "__outputCSV", $file);
-    echo "CSV file successfully created";
+    echo "<p>CSV file successfully created</p>";
     fclose($file);
 }
 

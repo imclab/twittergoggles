@@ -2,7 +2,7 @@
 
 //Total Number of Tweets for All Specific Jobs
 
-echo "<h1>Total Number of Tweets for All Specific Jobs</h1>";
+echo "<p><h1>Total Number of Tweets for All Specific Jobs</h1></p>";
 
 //Establishes connection to database
 $link= mysql_connect('sociotechnical.ischool.drexel.edu', 'info154', 'info154');
@@ -22,15 +22,16 @@ while($row = mysql_fetch_array($result))
 }
 
 //Sets up table
-echo "<table border='1'
+echo "<p><table border='1'
 <tr>
 <th>Job ID</th>
 <th>Last Count</th>
 <th>Result</th>
-</tr>";
+</tr></p>";
 mysql_data_seek($result,0);
 //Populates table
 while($row = mysql_fetch_array($result)){
+	echo"<p>";
     echo"<tr>";
     echo "<td>" . $row["job_id"] . "</td>";
     echo "<td>" . ltrim($row["last_count"],'0') . "</td>";
@@ -38,7 +39,7 @@ while($row = mysql_fetch_array($result)){
     echo "<tr>";
 }
 echo "</table>";
-
+echo"</p>";
 
 
 outputCSV($CSVarray);
@@ -49,7 +50,7 @@ function outputCSV($data) {
         fputcsv($filehandler, $vals); // add parameters if you want
     }
     array_walk($data, "__outputCSV", $file);
-    echo "CSV file successfully created";
+    echo "<p>CSV file successfully created</p>";
     fclose($file);
 }
 
@@ -59,5 +60,4 @@ mysql_close($link);
 
 
 ?>
-
 
