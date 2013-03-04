@@ -11,13 +11,23 @@
         echo "<table align='center' border='1' width='100'>";
         echo "<tr>";
         echo "<td>Id</td>";
+        echo "<td>State</td>";
+        echo "<td>Zombie Head</td>";
+        echo "<td>Since Id</td>";
         echo "<td>Query</td>";
+        echo "<td>Description</td>";
         echo "<td>Edit</td>";
+        echo "<td>Delete</td>";
         echo "</tr>";
         echo "<tr>";
         echo "<td>".$row['job_id']."</td>";
+        echo "<td>".$row['state']."</td>";
+        echo "<td>".$row['zombie_head']."</td>";
+        echo "<td>".$row['since_id_str']."</td>";
         echo "<td>".$row['query']."</td>";
+        echo "<td>".$row['description']."</td>";
         echo "<td><a href=\"update.php?job_id=".$row['job_id']."\"> EDIT </a></td>";
+        echo "<td><a href=\"delete.php?job_id=".$row['job_id']."\"> DELETE </a></td>";
         echo "</tr>";
         echo "</table>";
     }
