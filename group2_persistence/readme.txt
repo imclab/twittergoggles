@@ -1,4 +1,1 @@
-We were not able to create the database schema using PHP and MySQL because we had issues connecting properly. 
-However, we were able to connect using MySQL Workbench so you will see in _xgroup there is a full database 
-schematic that we implemented using the queries from persistance.sql. The PHP code we've written for the getter 
-and setter methods is missing the connection component but should work with the provided db schematic.
+There is now a table that tracks changes to the job table.  There is proof that it works if you look in the xgroup schema in MySQL Workbench because the job table has a trigger attached to it called Update_Data and the job_tracking table has one row that tracks the changes made to the state change made on a job.  In this will help on the admin page because functions can be successfully created that will allow users to change the state and zombie_head of a given job and the changes will be tracked in this new table.
