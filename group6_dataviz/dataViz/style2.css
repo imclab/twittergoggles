@@ -15,5 +15,9 @@
     background-color: steelblue;
     text-align: right;
     padding: 3px;
-    margin: 1px;   color: white;
+    margin: 1px;   
+    color: white;
+ }
+ div {
+     color: black;
  }
