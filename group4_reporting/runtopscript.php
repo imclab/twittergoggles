@@ -2,19 +2,19 @@
 
 //Total Number of Tweets for All Specific Jobs
 
-echo "<p><h1>Total Number of Tweets for All Specific Jobs</h1></p>";
+echo "<h1>Total Number of Tweets for All Specific Jobs</h1>";
 
 //Establishes connection to database
 $link= mysql_connect('sociotechnical.ischool.drexel.edu', 'info154', 'info154');
-/*
-//Added to allow all browsers time to load query results
-ini_set('max_execution_time', 300);
-*/
 
-$top1query='select last_count, query, job_id from twitterinblack46.job order by last_count desc limit 1;';
-$top5query='select last_count, query, job_id from twitterinblack46.job order by last_count desc limit 5;';
-$top10query='select last_count, query, job_id from twitterinblack46.job order by last_count desc limit 10;';
-$allquery='select last_count, query, job_id from twitterinblack46.job order by last_count desc;';
+//Added to allow all browsers time to load query results
+ini_set('max_execution_time', 1000);
+
+
+$top1query='select last_count, query, job_id from twitterinblack46.job where query is not null and last_count is not null order by last_count desc limit 1;';
+$top5query='select last_count, query, job_id from twitterinblack46.job where query is not null and last_count is not null order by last_count desc limit 5;';
+$top10query='select last_count, query, job_id from twitterinblack46.job where query is not null and last_count is not null order by last_count desc limit 10;';
+$allquery='select last_count, query, job_id from twitterinblack46.job where query is not null and last_count is not null order by last_count desc;';
 
 $top1result=mysql_query($top1query);
 $top5result=mysql_query($top5query);
@@ -30,12 +30,12 @@ $CSVarray = array();
 
 
 //Sets up table
-echo "<p><table border='1'
+echo "<table border='1'
 <tr>
 <th>Job ID</th>
 <th>Last Count</th>
 <th>Result</th>
-</tr></p>";
+</tr>";
 if($top=='top1'){
     while($row = mysql_fetch_array($top1result))
 {
@@ -44,7 +44,6 @@ if($top=='top1'){
     mysql_data_seek($top1result,0);
 //Populates table
 while($row = mysql_fetch_array($top1result)){
-	echo"<p>";
     echo"<tr>";
     echo "<td>" . $row["job_id"] . "</td>";
     echo "<td>" . ltrim($row["last_count"],'0') . "</td>";
@@ -52,7 +51,6 @@ while($row = mysql_fetch_array($top1result)){
     echo "<tr>";
 }
 echo "</table>";
-echo"</p>";
 }
 elseif($top=='top5'){
     
@@ -63,7 +61,6 @@ while($row = mysql_fetch_array($top5result))
     mysql_data_seek($top5result,0);
     //Populates table
 while($row = mysql_fetch_array($top5result)){
-	echo "<p>";
     echo"<tr>";
     echo "<td>" . $row["job_id"] . "</td>";
     echo "<td>" . ltrim($row["last_count"],'0') . "</td>";
@@ -71,7 +68,6 @@ while($row = mysql_fetch_array($top5result)){
     echo "<tr>";
 }
 echo "</table>";
-echo "</p>";
 }
 
 elseif($top=='top10'){
@@ -82,7 +78,6 @@ elseif($top=='top10'){
     mysql_data_seek($top10result,0);
     //Populates table
 while($row = mysql_fetch_array($top10result)){
-	echo "<p>";
     echo"<tr>";
     echo "<td>" . $row["job_id"] . "</td>";
     echo "<td>" . ltrim($row["last_count"],'0') . "</td>";
@@ -90,7 +85,6 @@ while($row = mysql_fetch_array($top10result)){
     echo "<tr>";
 }
 echo "</table>";
-echo "</p>";
 }
 
 elseif($top=='all'){
@@ -101,7 +95,6 @@ elseif($top=='all'){
     mysql_data_seek($allresult,0);
     //Populates table
 while($row = mysql_fetch_array($allresult)){
-	echo "<p>";
     echo"<tr>";
     echo "<td>" . $row["job_id"] . "</td>";
     echo "<td>" . ltrim($row["last_count"],'0') . "</td>";
@@ -109,7 +102,6 @@ while($row = mysql_fetch_array($allresult)){
     echo "<tr>";
 }
 echo "</table>";
-echo "</p>";
 }
 
 
@@ -121,7 +113,7 @@ function outputCSV($data) {
         fputcsv($filehandler, $vals); // add parameters if you want
     }
     array_walk($data, "__outputCSV", $file);
-    echo "<p>CSV file successfully created</p>";
+    echo "CSV file successfully created";
     fclose($file);
 }
 
