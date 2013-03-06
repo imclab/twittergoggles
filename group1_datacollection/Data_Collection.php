@@ -3,7 +3,7 @@
 //DATABASE LOGIN INFORMATION
 //Change these variables to connect to your database
 
-include('db_connect_info.txt');
+include('../db_connect_info.txt');
 
 // $dbhost = "sociotechnical.ischool.drexel.edu"; //Database host
 // $dbuser = "info154"; //Database username
