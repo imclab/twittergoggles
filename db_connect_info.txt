@@ -2,9 +2,10 @@
 
 // Data connection information include file
 
-$dbhost   = "127.0.0.1";
-$dbuser = "root";
-$dbpass = "";
-$dbname = "twitter";
+
+$dbhost = "sociotechnical.ischool.drexel.edu"; //Database host
+$dbuser = "info154"; //Database username
+$dbpass = "info154"; //Database password
+$dbname = "goggles_test"; //Database schema name
 
 ?>
