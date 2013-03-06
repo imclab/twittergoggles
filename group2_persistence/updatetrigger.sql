@@ -1,16 +1,16 @@
-DROP TABLE IF EXISTS `job`;
-CREATE TABLE `job` (
-  `job_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `state` int(11) NOT NULL DEFAULT '0',
-  `zombie_head` int(10) DEFAULT NULL,
-  `since_id_str` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT '0',
-  `query` varchar(255) NOT NULL,
-  `description` varchar(255) DEFAULT 'I am a lazy piece of shit and I did not enter a description',
-  `last_count` int(10) unsigned zerofill DEFAULT NULL,
-  `last_run` datetime DEFAULT NULL,
-  `analysis_state` int(11) DEFAULT '0',
-  PRIMARY KEY (`job_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2511 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+-- DROP TABLE IF EXISTS `job`;
+-- CREATE TABLE `job` (
+--   `job_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+--   `state` int(11) NOT NULL DEFAULT '0',
+--   `zombie_head` int(10) DEFAULT NULL,
+--   `since_id_str` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT '0',
+--   `query` varchar(255) NOT NULL,
+--   `description` varchar(255) DEFAULT 'I am a lazy piece of shit and I did not enter a description',
+--   `last_count` int(10) unsigned zerofill DEFAULT NULL,
+--   `last_run` datetime DEFAULT NULL,
+--   `analysis_state` int(11) DEFAULT '0',
+--   PRIMARY KEY (`job_id`)
+-- ) ENGINE=InnoDB AUTO_INCREMENT=2511 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 DROP TABLE IF EXISTS `job_tracking`;
 Create Table `job_tracking` (
