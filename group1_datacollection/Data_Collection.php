@@ -1,11 +1,12 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: Kevin
- * Date: 1/30/13
- * Time: 11:10 AM
- * To change this template use File | Settings | File Templates.
- */
+
+//DATABASE LOGIN INFORMATION
+//Change these variables to connect to your database
+$dbhost = "sociotechnical.ischool.drexel.edu"; //Database host
+$dbuser = "info154"; //Database username
+$dbpass = "info154"; //Database password
+$dbname = "_xgroup"; //Database schema name
+
 date_default_timezone_set('UTC');
 $date = date("Y-m-d H:i:s");
 echo "Start Date: " .  $date . "</br>"; //Add all echo statements to end?
@@ -17,6 +18,7 @@ if (in_array("-v", $argv)) {
     echo("</br>terse mode</br>\n");
     $log_level = 1;
 }
+
 
 // delay exists so that all the heads are hitting the job table
 $options = getopt("h:d::");  // removed i:
@@ -31,11 +33,9 @@ echo "Head: " . $head . "</br>";
 echo "Delay: " . $delay . "</br>";
 
 
-//Change these variables to connect to your database
-$dbhost = "sociotechnical.ischool.drexel.edu"; //Database host
-$dbuser = "info154"; //Database username
-$dbpass = "info154"; //Database password
-$dbname = "_xgroup"; //Database schema name
+
+ini_set('max_execution_time', 200); // set max execution time to avoid lag outs after 30 seconds
+
 
 
 //this is concatenated to the end of the URL
