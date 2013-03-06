@@ -2,10 +2,10 @@
 
 //DATABASE LOGIN INFORMATION
 //Change these variables to connect to your database
-$dbhost = "sociotechnical.ischool.drexel.edu"; //Database host
-$dbuser = "info154"; //Database username
-$dbpass = "info154"; //Database password
-$dbname = "_xgroup"; //Database schema name
+$dbhost = "xxxxxxxxx"; //Database host
+$dbuser = "xxxxxxx"; //Database username
+$dbpass = "xxxxxxx"; //Database password
+$dbname = "goggins_test"; //Database schema name
 
 date_default_timezone_set('UTC');
 $date = date("Y-m-d H:i:s");
