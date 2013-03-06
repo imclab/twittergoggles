@@ -2,10 +2,13 @@
 
 //DATABASE LOGIN INFORMATION
 //Change these variables to connect to your database
-$dbhost = "xxxxxxxxx"; //Database host
-$dbuser = "xxxxxxx"; //Database username
-$dbpass = "xxxxxxx"; //Database password
-$dbname = "goggins_test"; //Database schema name
+
+include('db_connect_info.txt');
+
+// $dbhost = "sociotechnical.ischool.drexel.edu"; //Database host
+// $dbuser = "info154"; //Database username
+// $dbpass = "info154"; //Database password
+// $dbname = "goggles_test"; //Database schema name
 
 date_default_timezone_set('UTC');
 $date = date("Y-m-d H:i:s");
