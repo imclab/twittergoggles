@@ -20,7 +20,7 @@
             var test = 
             <?php
                 
-                $file = fopen('test.csv', 'r'); //opens csv file for reading
+                $file = fopen('data.csv', 'r'); //opens csv file for reading
                 $line = array();
                 $temp = array();
                 
@@ -42,7 +42,10 @@
                     {
                     if(($count-1) % 3 == 0) //adds value to array only if value is in second column of CSV
                         {
-                        print($line[$count]); 
+                        if(strcmp($line[$count], "0000000000") != 0 and strcmp($line[$count], " ") != 0)
+                            {
+                            print($line[$count]);
+                            }
                         if($commacount < (count($line)/3) - 1) //makes sure commas are added after every element except the last
                             {
                             print (", ");
@@ -63,11 +66,12 @@
             chart.selectAll("div")
                  .data(test) //binds array to chart
                  .enter().append("div") //if there isnt enough divs for each element in data array, create empty ones 
-                 .style("width", function(d) { return d * 10 + "px"; }) //D3 function returns array element * 10 in pixels
+                 .style("width", function(d) { return d + "px"; }) //D3 function returns array element * 10 in pixels
+                 .style("color", "black")
                  .text(function(d) { var labels = //begin parsing JS array for bar labels that corresponds to values of bar
                                     <?php
                                     
-                                    $file = fopen('test.csv', 'r'); //opens csv file for reading
+                                    $file = fopen('data.csv', 'r'); //opens csv file for reading
                                     $line = array();
                                     $temp = array();
                                     
@@ -87,9 +91,12 @@
                                     
                                     while($count <= count($line)) //loops one time for every vaule of file array
                                         {
-                                        print("\""); //quotes for strings
-                                        print($line[$count]); //value of string
-                                        print("\""); //quotes for strings
+                                        if(strcmp($line[($count-1)], "0000000000") != 0 and strcmp($line[($count - 1)], " ") != 0)
+                                            {
+                                            print("\""); //quotes for strings
+                                            print($line[$count]); //value of string
+                                            print("\""); //quotes for strings
+                                            }
                                         if($commacount < (count($line)/3) - 1)//makes sure commas are added after every element except the last
                                             {
                                             print (", "); //print comma
@@ -102,7 +109,8 @@
                                     
                                     fclose($file); //closes file
                                     ?>;
-                                    var place = test.indexOf(d); //values place in array of data                                   
+                                    var place = test.indexOf(d); //values place in array of data   
+                                    test[place] = -1;
                                     return labels[place];}); // matched to the appropriate label
                 
         </script>
