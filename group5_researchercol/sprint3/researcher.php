@@ -64,6 +64,7 @@
 	<!-- YOUR CODE GOES HERE
 	================================================== -->
         <div class="container">
+            <h1> Welcome to Researcher and collaboration!</h1><br> 
             <p> <a href="searchPageForm.html" class="btn space">New Researcher</a> </p>
             <p> <a href="existingResearcherSearch.html" class="btn">Existing Researcher</a> </p>
         </div>

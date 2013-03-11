@@ -19,26 +19,32 @@ $result = new QueryDatabase('_zgroup');
 $prepare1 = $result->prepare_query($query1);
 $prepare2 = $result->prepare_query($query2);
 
+// if user already exists
 if ($prepare2->rowCount() >=1)
 {
+    // Find researcher ID based on email address
     $queryID = "SELECT researcher_id FROM researcher_info WHERE email = '" . $email . "'";
     $res = $result->prepare_query($queryID);
-        
+    
+    // Fetching IDs into arrays
     $row = $res->fetch(PDO::FETCH_ASSOC);
         
     $id = $row['researcher_id'];
     
+    // find researcher ID from the researcher_job table and match with the job
     $query4 = "SELECT researcher_id FROM researcher_job
     WHERE researcher_job.researcher_id = '" . $id . "' AND jobs = '" . $search_phrase . "'";
     
     $prepare4 = $result->prepare_query($query4);
     
+    // if researcher has already resquested same job, show en error
     if ($prepare4->rowCount() >= 1) {
         echo '<div class="container">';    
         echo '<div class="alert alert-error"> You\'ve already searched for this term </div>';
         echo '</div>';
     }
     
+    // Otherwise select ID from the Info table based on email
     else {
         $queryID = "SELECT researcher_id FROM researcher_info WHERE email = '" . $email . "'";
         $res = $result->prepare_query($queryID);
@@ -47,6 +53,7 @@ if ($prepare2->rowCount() >=1)
         
         $id = $row['researcher_id'];
         
+        // Then insert ID to job table coresponse to the user's search
         $query4 = "INSERT INTO researcher_job (`jobs`, `researcher_id`) values ('".$search_phrase."', '" . $id ."')";
         $prepare4 = $result->prepare_query($query4);  
         echo '<div class="container">'; 
@@ -54,6 +61,8 @@ if ($prepare2->rowCount() >=1)
         echo '</div>';
     }
 }
+
+// If user is completly new to our system, add profile info and search phrase
 else
 {
     echo '<div class="container">';
