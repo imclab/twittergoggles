@@ -1,15 +1,24 @@
 <?php
 
-$connect = mysql_connect("localhost", "root", "root");
-mysql_select_db("INFO154_lab2", $connect);
+$connect = mysql_connect("sociotechnical.ischool.drexel.edu", "info154", "info154");
+if (!$connect) {
+    die('Could not connect: ' . mysql_error());
+}
+
+mysql_select_db("goggles_test", $connect);
+
 $query = "select * from job";
 $result = mysql_query($query);
 
-echo "<head><link rel='stylesheet' href='bootstrap/bootstrap/css/bootstrap.css' type='text/css' /></head>";
+
+echo "<head><link href='./css/bootstrap.css' rel='stylesheet'>";
+echo "<link href='.css/bootstrap-responsive.css' rel='stylesheet'>";
+echo "</head>";
+
 echo "<center>";
 echo "<h1>Current Jobs</h1>";
-echo '<br/>'.'<a href="loadjobs.php">Load Stored Jobs</a>';
-echo '<br/>'.'<a href="index.php">Back To Main Page</a>';
+echo '<br/>' . '<a href="loadjobs.php">Load Stored Jobs</a>';
+echo '<br/>' . '<a href="index.php">Back To Main Page</a>';
 echo "</center>";
 echo "<table align='center' border='1' width='100'>";
 echo "<tr>";
