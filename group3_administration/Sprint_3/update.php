@@ -48,7 +48,7 @@ $row = mysql_fetch_array($result);
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li class="">
-                                <a href="./index.html">Home</a>
+                                <a href="./twitterGogglesTest/index.html">Home</a>
                             </li>
                             <li class="active">
                                 <a href="">THIS IS THE ACTIVE PAGE</a>
@@ -67,7 +67,10 @@ $row = mysql_fetch_array($result);
                 </div>
             </div>
         </div> <!-- This ends the navbar. Please don't erase anything inside of this div -->
-
+        </br>
+        </br>
+        </br>
+        </br>
     <center>
         <form name="update" action="save.php" method="post">
             <table align='center'>
