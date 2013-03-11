@@ -22,13 +22,13 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="">
-                <a href="./index.html">Home</a>
+                <a href="twitterGogglesTest/index.html">Home</a>
               </li>
 <li class="active">
-                <a href="">THIS IS THE ACTIVE PAGE</a>
+                <a href="">Current Visualization</a>
               </li>
               <li class="">
-                <a href="group4_reporting/reporting.html">Visualization/Reporting</a>
+                <a href="group6_dataviz/dataViz/reporting.html">Visualization/Reporting</a>
               </li>
               <li class="">
                 <a href="group5/researchercol/index.php">Administration</a>
