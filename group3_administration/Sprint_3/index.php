@@ -32,7 +32,7 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="">
-                <a href="./index.html">Home</a>
+                <a href="./twitterGogglesTest/index.html">Home</a>
               </li>
 			  <li class="active">
                 <a href="">THIS IS THE ACTIVE PAGE</a>
@@ -52,6 +52,10 @@
       </div>
     </div> <!-- This ends the navbar. Please don't erase anything inside of this div -->
 <center>
+    </br>
+    </br>
+    </br>
+    </br>
     <h1>Job Administration</h1>
     <table align="center">
         <tbody>

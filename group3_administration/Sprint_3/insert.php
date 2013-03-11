@@ -32,7 +32,7 @@
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li class="">
-                                <a href="./index.html">Home</a>
+                                <a href="./twitterGogglesTest/index.html">Home</a>
                             </li>
                             <li class="active">
                                 <a href="">THIS IS THE ACTIVE PAGE</a>
@@ -51,7 +51,10 @@
                 </div>
             </div>
         </div> <!-- This ends the navbar. Please don't erase anything inside of this div -->
-
+        </br>
+        </br>
+        </br>
+        </br>
         <?php
         $item = $_POST['query'] . '<br>';
         echo "<center> Query: " . $item . "</center><br/>";
