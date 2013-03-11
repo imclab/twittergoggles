@@ -1,16 +1,19 @@
 <?php
-echo "<head><link rel='stylesheet' href='bootstrap/bootstrap/css/bootstrap.css' type='text/css' /></head>";
+echo "<head><link href='./css/bootstrap.css' rel='stylesheet'>";
+echo "<link href='.css/bootstrap-responsive.css' rel='stylesheet'>";
+echo "</head>";
+
 echo '<center><h1>Search Results</h1></cetner>';
 
 $item = $_POST['query'] . '<br>';
 echo "<center> Query: " . $item . "</center><br/>";
 
-$connect = mysql_connect("localhost", "root", "root");
-if (!$connect) {
-    die('Could not connect: ' . mysql_error());
-}
+$connect = mysql_connect("sociotechnical.ischool.drexel.edu", "info154", "info154");
+        if (!$connect) {
+            die('Could not connect: ' . mysql_error());
+        }
 
-mysql_select_db("INFO154_lab2", $connect);
+        mysql_select_db("goggles_test", $connect);
 
 //identifies if exists
 
