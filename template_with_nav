@@ -41,10 +41,10 @@
                 <a href="group4_reporting/reporting.html">Visualization/Reporting</a>
               </li>
               <li class="">
-                <a href="group5/researchercol/index.php">Administration</a>
+                <a href="group3_administration/Sprint 3/index.php">Administration</a>
               </li>
               <li class="">
-                <a href="/group5/researchercol/searchPageForm.html">Research</a>
+                <a href="group5_researchercol/sprint3/researcher.php">Research</a>
               </li>
             </ul>
           </div>
