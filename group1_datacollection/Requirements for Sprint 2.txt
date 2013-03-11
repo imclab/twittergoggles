@@ -1,7 +1,0 @@
-Data Collection Team
-Week 6 Lab Deliverable
-February 13th, 2013
-Professor Goggins
-Data Collection Team - Sprint 2 Update
-	Being the second out of three sprints, our team organized goals around this time frame. We plan to push out sample databases as soon as possible, allowing data persistence and administration teams to test their code in a proper environment. As the majority of our team’s code is complete, this sprint will consist of formalization and documentation of our section. Sprint three is planned around compliance with the system’s end goal, as well as assuring proper collaboration with the other groups.
-	The goals for this sprint include updating our segment of the system to comply with previous issues as well as take into consideration the peer review. Step one for us is to go through and update our actual code with more comments to increase visibility for all working on it, as well as including a readme text file that gives and overview and status of our section of the project. The next major step is to communicate with the persistence team to create an interface for the modules. This would mean revising our collection to accurately match the schema made by them in sprint one. This will reliably allow the transfer and storage of the Twitter data for all sections of the project. This also includes us having sample database (_Ygroup) available for other teams to build and test their project upon, which is vital in a partitioned system construction.
