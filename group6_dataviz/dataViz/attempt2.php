@@ -3,10 +3,51 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title></title>
+        <link rel="stylesheet" type="text/css" href="bootstrap.css"/>
         <link rel="stylesheet" type="text/css" href="style2.css" />
         <script type ="text/javascript" src="D3/d3.v3.js"></script>
     </head>
     <body>
+        
+        	<!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top"> <!-- This starts the navbar. Please don't erase anything inside of this div -->
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="">
+                <a href="./index.html">Home</a>
+              </li>
+<li class="active">
+                <a href="">THIS IS THE ACTIVE PAGE</a>
+              </li>
+              <li class="">
+                <a href="group4_reporting/reporting.html">Visualization/Reporting</a>
+              </li>
+              <li class="">
+                <a href="group5/researchercol/index.php">Administration</a>
+              </li>
+              <li class="">
+                <a href="/group5/researchercol/searchPageForm.html">Research</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div> <!-- This ends the navbar. Please don't erase anything inside of this div -->
+        
+        <!-- Data Viz
+    ================================================== -->
+        
+        
+        <br><br><br>
+        <h1><center>Visualization of Data Output</center></h1>
         
               <?php
          
@@ -109,9 +150,11 @@
                                     
                                     fclose($file); //closes file
                                     ?>;
-                                    var place = test.indexOf(d); //values place in array of data   
+                                    var place = test.indexOf(d);//values place in array of data 
+                                    var total = test[place];
                                     test[place] = -1;
-                                    return labels[place];}); // matched to the appropriate label
+                                    var query = labels[place].split("=")[1];
+                                    return query + " " + total ;}); // matched to the appropriate label
                 
         </script>
   </center>

@@ -1,0 +1,4 @@
+Our group will take the output of the reporting team and present it as a horizontal bar graph. 
+We will display the bar graph using the d3 library. We are sharing our landing page with the reporting team. 
+When the user submits a request for the tweet counts, then a page will output data with a hyperlink to our graph.
+To deploy, ensure that the following files and folders are included within the same folder: D3 (Folder), nbproject (Folder, needed for opening project in NetBeans), attempt2.php, bootstrap.css, data.csv, reporting.html, runscript.php, runtoscript.php, searchbyqueryscript, style2.css, test.csv
