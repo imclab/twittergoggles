@@ -14,7 +14,7 @@ ini_set('max_execution_time', 1000);
 $top1query='select last_count, query, job_id from twitterinblack46.job where query is not null and last_count is not null order by last_count desc limit 1;';
 $top5query='select last_count, query, job_id from twitterinblack46.job where query is not null and last_count is not null order by last_count desc limit 5;';
 $top10query='select last_count, query, job_id from twitterinblack46.job where query is not null and last_count is not null order by last_count desc limit 10;';
-$allquery='select last_count, query, job_id from twitterinblack46.job where query is not null and last_count is not null order by last_count desc;';
+$allquery='select last_count,query, job_id from twitterinblack46.job where query is not null and last_count is not null  and last_count != "0000000000" order by last_count desc;';
 
 $top1result=mysql_query($top1query);
 $top5result=mysql_query($top5query);
