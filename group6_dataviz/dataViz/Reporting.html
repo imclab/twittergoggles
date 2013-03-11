@@ -1,0 +1,46 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+         <h1>Display Jobs with Highest counts</h1>
+        <form action="runtopscript.php" method="POST">
+            <select name="toptweets">
+                <option value="top1">Number 1 highest</option>
+                <option value="top5">Top 5</option>
+                <option value="top10">Top 10</option>
+                <option value="all">All jobs descending</option>
+            </select>
+            <input type="submit">
+        </form>
+          <br><br><hr>
+        <h1>Search for particular results by Job ID</h1>
+        <h3>Input Job ID's separated by commas</h1>
+        <br>
+        <form action="runscript.php" method="POST">
+            <input name="job_id">
+            <br>
+            <input type="submit">
+            
+        </form>
+        
+        <br><br><hr>
+        <h1>Search for particular results by Name</h1>
+        
+        <h3>Input "#" or "@" followed by the desired result and separate multiple
+                results with commas(ex. #abc123,@abc123)</h3>
+        <form action="searchbyqueryscript.php" method="POST">
+            <input name="result_name">
+            <br>
+            <input type="submit">
+        </form>
+       
+       
+    </body>
+</html>
