@@ -10,8 +10,8 @@ $search_phrase = $_POST["search_request"];
 
 
 //Prepared select query
-$query1 = 'select jobs from researcher_job where jobs is'.$search_phrase.'group by jobs';
-$query2 = 'select firstName, lastName, email from researcher_info where firstName is'.$first.'and lastName is'.$last.'and email is'.$email.'group by lastName';
+$query1 = 'select `jobs` from `researcher_job` where `jobs` = "'.$search_phrase.'"';
+$query2 = 'select `firstName`, `lastName`, `email` from `researcher_info` where `firstName` = "'.$first.'" and `lastName` = "'.$last.'" and `email` = "'.$email.'"';
 
 //Created new Database object
 $result = new QueryDatabase('_zgroup');
@@ -20,15 +20,49 @@ $result = new QueryDatabase('_zgroup');
 $prepare1 = $result->prepare_query($query1);
 $prepare2 = $result->prepare_query($query2);
 
-// If user entered his or her profile information and search pharse that have already exsited in Database, than show message 
-if ($prepare1->rowCount() >=1 and  $prepare2->rowCount() >=1)
+if ($prepare2->rowCount() >=1)
 {
-    echo 'Your profile information and search key are already exist in the database.';
+    echo 'Your profile information is already exist in the database'."<br>";
+
+}
+else
+{
+     echo 'Your profile information is being added into the database'.'<br>';
+    $query3 = "INSERT INTO researcher_info (`firstName`, `lastName`, `email`) values ('".$first."','".$last."','".$email."')";
+    $prepare3 = $result->prepare_query($query3);
+}
+
+if ($prepare1->rowCount() >=1)
+        {    
+      echo 'Your keyword search already exists in the database'."<br>";
+        
+        }
+        
+ else {
+        echo 'But your new search keywords is not, so it is being added now';
+            $query4 = "INSERT INTO researcher_job (`jobs`) values ('".$search_phrase."')";
+            $prepare4 = $result->prepare_query($query4);    
+}
+
+
+
+
+
+
+
+
+
+/*
+
+// If user entered his or her profile information and search pharse that have already exsited in Database, than show message 
+if (($prepare1->rowCount() >=1) &&  ($prepare2->rowCount() >=1))
+{
+    echo '';
 
 }
 
 // Else insert data into the table
-else 
+else  
         {   
     echo 'Your search query is being added into the database.'.'<br>';
     $query3 = "INSERT INTO researcher_job (`jobs`) values ('".$search_phrase."')";
@@ -47,10 +81,14 @@ if ($prepare2->rowCount() >=1)
 // When new search key did not exsit entered by exsiting user, insert new search keyword into the database
 if ($prepare1->rowCount() >=1)
         {    
-            echo 'But your new search keywords is not, so it is being added now';
-            $query5 = "INSERT INTO researcher_job (`jobs`) values ('".$search_phrase."')";
-            $prepare5 = $result->prepare_query($query5);
+      echo 'Your keyword search already exists in the database';
         
         }
-   
+        
+ else {
+        echo 'But your new search keywords is not, so it is being added now';
+            $query5 = "INSERT INTO researcher_job (`jobs`) values ('".$search_phrase."')";
+            $prepare5 = $result->prepare_query($query5);    
+}
+*/   
 ?>

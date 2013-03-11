@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link href="./css/bootstrap.css" rel="stylesheet">
+        <style type="text/css">
+        body {
+            padding: 60px 0 40px;
+        }
+        .space {
+            margin-bottom: 20px;
+        }
+    </style>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top"> <!-- This starts the navbar. Please don't erase anything inside of this div -->
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="">
+                <a href="./index.html">Home</a>
+              </li>
+			  <li class="active">
+                <a href="">THIS IS THE ACTIVE PAGE</a>
+              </li>
+              <li class="">
+                <a href="group4_reporting/reporting.html">Visualization/Reporting</a>
+              </li>
+              <li class="">
+                <a href="group5/researchercol/index.php">Administration</a>
+              </li>
+              <li class="">
+                <a href="/group5/researchercol/searchPageForm.html">Research</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div> <!-- This ends the navbar. Please don't erase anything inside of this div -->
+    <div class="container">
+        <form name="search_query" action="UpdateQueryfile.php" method="post">
+            First Name: <input type = "text" name = "firstName"> <br>
+            Last Name: <input type = "text" name = "lastName"> <br>
+            Email: <input type = "text" name = "email"> <br>
+            Search Here: <input type = "text" name = "search_request"> <br>
+            <input type="submit" value="Search" class="btn">
+        </form> 
+    </div>
+        
+        
+    </body>
+</html>

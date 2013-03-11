@@ -1,12 +1,11 @@
-
-        <?php
+<?php
          // Created class
         class QueryDatabase {
-            private $db;
+            public $db;
             public function __construct($sampleDatabase){
                 $dsn = "mysql:host=sociotechnical.ischool.drexel.edu;dbname=".$sampleDatabase;
                 $userName = "student";
-                $password = "dragon600";
+                $password = "dragon900";
                 
             try{
                     // use PDO method for connection
