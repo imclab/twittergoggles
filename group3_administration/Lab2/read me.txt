@@ -1,4 +1,4 @@
-1. Move the filed for the project titled "Info154_lab2" into your local "htdocs" folder.
+1. Move the files for the project titled "Info154_lab2" into your local "htdocs" folder.
 2. Create a database within phpmyadmin titled "info154_lab2".
 3. Import the sql file titled "info154_lab2.sql" into the database you just created.
 4. Password and username should both be set to "root".
