@@ -94,3 +94,12 @@ CREATE TABLE `researcher_job` (
   `jobs` varchar(140) NOT NULL,
   PRIMARY KEY (`researcher_job_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+
+DROP TABLE IF EXISTS `tweet_count`;
+create table tweet_count
+as
+select count(*) as last_count, a.query, b.job_id
+from job a, tweet b
+where a.job_id = b.job_id
+group by a.query, b.job_id
+order by last_count desc;

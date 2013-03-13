@@ -22,19 +22,19 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="">
-                <a href="twitterGogglesTest/index.html">Home</a>
+                <a href="/twitterGogglesTest/index.html">Home</a>
               </li>
 <li class="active">
                 <a href="">Current Visualization</a>
               </li>
               <li class="">
-                <a href="group6_dataviz/dataViz/reporting.html">Visualization/Reporting</a>
+                <a href="/twitterGogglesTest/group6_dataviz/dataViz/Reporting.html">Visualization/Reporting</a>
               </li>
               <li class="">
-                <a href="group5/researchercol/index.php">Administration</a>
+                <a href="/twitterGogglesTest/group3_administration/Sprint_3/index.php">Administration</a>
               </li>
               <li class="">
-                <a href="/group5/researchercol/searchPageForm.html">Research</a>
+                <a href="/twitterGogglesTest/group5_researchercol/sprint3/researcher.php">Research</a>
               </li>
             </ul>
           </div>
