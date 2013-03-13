@@ -107,7 +107,7 @@
             chart.selectAll("div")
                  .data(test) //binds array to chart
                  .enter().append("div") //if there isnt enough divs for each element in data array, create empty ones 
-                 .style("width", function(d) { return d + "px"; }) //D3 function returns array element * 10 in pixels
+                 .style("width", function(d) { return Math.log(d) + "px"; }) //D3 function returns array element * 10 in pixels
                  .style("color", "black")
                  .text(function(d) { var labels = //begin parsing JS array for bar labels that corresponds to values of bar
                                     <?php
