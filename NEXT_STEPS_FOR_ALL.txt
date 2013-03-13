@@ -37,3 +37,7 @@
 		if (!$db_select_result) {
 		    die('*** Error: could not select database: ' . mysql_error() . "\n");
 		}
+
+7. Job Administration - Push the ability to edit state and head in the job table to Github 
+
+
